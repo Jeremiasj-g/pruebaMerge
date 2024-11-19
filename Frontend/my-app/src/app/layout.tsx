@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function Layout({children} : {children: React.ReactNode}) {
     return (
         <html lang='en' className={`${montserrat.variable}`}>
-            <body className='flex flex-col h-screen bg-white-200 font-montserrat'>
+            <body className='flex flex-col min-h-screen bg-white-200 font-montserrat'>
                 <Header/>
                 {children}
                 <Footer/>

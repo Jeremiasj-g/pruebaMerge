@@ -1,0 +1,17 @@
+.header-nav {
+    color: white;
+    height: max-content;
+
+    animation: enhance-header linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 200px;
+}
+
+@keyframes enhance-header {
+    to {
+        background-color: rgb(255, 255, 255, .8);
+        backdrop-filter: blur(8px);
+        color: #2f2f2f;
+        box-shadow: 10px 10px 30px rgb(0, 0, 0, .2);
+    }
+}

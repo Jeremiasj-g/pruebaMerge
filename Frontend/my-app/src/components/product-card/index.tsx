@@ -1,5 +1,6 @@
 import { Product } from "@/types/product";
 import { useRouter } from "next/navigation";
+import AddToCartButton from "../buttons/add-cart-button/AddToCartButton";
 
 interface ProductCardProps {
   product: Product;
@@ -20,23 +21,29 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   };
 
   return (
-    <div
-      onClick={handleClick}
-      className="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out cursor-pointer flex flex-col justify-between"
-    >
-      <div>
+    <div onClick={handleClick} className="max-w-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out cursor-pointer flex flex-col justify-between">
+
+      <div className="overflow-hidden">
         <img
           src={product.image}
           alt={product.title}
-          className="w-full h-48 object-cover"
+          className="w-full h-64 p-4 object-contain bg-white transition-all hover:scale-110"
         />
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{product.title}</div>
-        <p className="text-gray-700 text-base">{truncateText(product.description, 60)}</p>
-        </div>
       </div>
-      <div className="px-6 pt-4 pb-2">
-        <span className="text-gray-900 font-bold text-lg">${product.price}</span>
+
+      <div className="flex flex-col p-6 gap-6">
+        <div>
+          <p className="font-bold text-xl mb-2">{product.title}</p>
+          <p className="text-gray-700 text-base">{truncateText(product.description, 60)}</p>
+        </div>
+
+        <div className="">
+          <span className="text-gray-900 font-bold text-lg">Price ${product.price}</span>
+        </div>
+
+        <div>
+          <AddToCartButton />
+        </div>
       </div>
     </div>
   );

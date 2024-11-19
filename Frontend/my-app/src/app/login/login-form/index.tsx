@@ -5,7 +5,7 @@ import { useState } from "react";
 import { formLogin } from "../../../actions/authActions";
 import { useRouter } from "next/navigation";
 import {signIn, useSession, signOut} from 'next-auth/react'
-import { GoogleSignInButton } from "@/components/buttons/google-sign-in-button";
+/* import { GoogleSignInButton } from "@/components/buttons/google-sign-in-button"; */
 
 
 export default function LoginForm() {
@@ -80,7 +80,7 @@ export default function LoginForm() {
           </button>
           {error && <p className="text-red-500 text-xs mt-2 w-full text-center">{error}</p>}
         </div>
-        <GoogleSignInButton />
+        {/* <GoogleSignInButton /> */}
         <p className="text-sm font-light mt-6 text-center">
           Don´t have an account yet?{" "}
           <Link href={"/register"} className="font-bold hover:text-gray-500">
